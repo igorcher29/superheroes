@@ -1,0 +1,59 @@
+﻿@model Domain.Entities.SuperPower
+
+@{
+    ViewBag.Title = "Удаление суперспособности";
+}
+
+<h2>Удаление суперспособности</h2>
+
+<h3>Вы уверены, что хотите удалить эту суперспособность?</h3>
+<div>
+    <h4>Суперспособность:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SuperHero.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuperHero.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    <div class="form-group">
+        @if (Model.ImageData == null)
+            {
+            <img class="img-thumbnail" width="320" height="320" src="~/Content/Images/default_superpower.png" />
+        }
+        else
+        {
+            <img class="img-thumbnail" width="320" height="320" src="@Url.Action("GetImage", "SuperPowers", new {superpowerId = Model.Id })" />
+        }
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("К списку супеспособностей", "Index") |
+            <input type="submit" value="Удалить" class="btn btn-default" />            
+        </div>
+    }
+</div>

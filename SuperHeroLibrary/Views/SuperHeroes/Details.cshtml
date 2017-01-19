@@ -1,0 +1,47 @@
+﻿@model Domain.Entities.SuperHero
+
+@{
+    ViewBag.Title = "Супергерой";
+}
+
+<h2>Просмотр</h2>
+
+<div>
+    <h4>Супергерой:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>      
+
+    </dl>
+</div>
+
+<div class="form-group">
+    @if (Model.ImageData == null)
+            {
+        <img class="img-thumbnail" width="320" height="320" src="~/Content/Images/default_superhero.jpg" />
+    }
+    else
+    {
+        <img class="img-thumbnail" width="320" height="320" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
+    }
+</div>
+
+
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("К списку супергероев", "Index")
+</p>

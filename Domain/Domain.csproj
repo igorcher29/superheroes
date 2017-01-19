@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DB0FB94-2BB5-4367-A47D-2DC37F53A4E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ISuperHeroesRepository.cs" />
+    <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="Concrete\EFSuperHeroesRepository.cs" />
+    <Compile Include="Entities\SuperHero.cs" />
+    <Compile Include="Entities\SuperPower.cs" />
+    <Compile Include="Migrations\201701110745201_InitialDatabase.cs" />
+    <Compile Include="Migrations\201701110745201_InitialDatabase.Designer.cs">
+      <DependentUpon>201701110745201_InitialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701111442538_SuperHeroNameValidation.cs" />
+    <Compile Include="Migrations\201701111442538_SuperHeroNameValidation.Designer.cs">
+      <DependentUpon>201701111442538_SuperHeroNameValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701121416535_SuperPowerValidation.cs" />
+    <Compile Include="Migrations\201701121416535_SuperPowerValidation.Designer.cs">
+      <DependentUpon>201701121416535_SuperPowerValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161335590_SuperHeroImages.cs" />
+    <Compile Include="Migrations\201701161335590_SuperHeroImages.Designer.cs">
+      <DependentUpon>201701161335590_SuperHeroImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161348344_SuperHeroDescriptionValidation.cs" />
+    <Compile Include="Migrations\201701161348344_SuperHeroDescriptionValidation.Designer.cs">
+      <DependentUpon>201701161348344_SuperHeroDescriptionValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171352201_SuperPowerImages.cs" />
+    <Compile Include="Migrations\201701171352201_SuperPowerImages.Designer.cs">
+      <DependentUpon>201701171352201_SuperPowerImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701110745201_InitialDatabase.resx">
+      <DependentUpon>201701110745201_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701111442538_SuperHeroNameValidation.resx">
+      <DependentUpon>201701111442538_SuperHeroNameValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701121416535_SuperPowerValidation.resx">
+      <DependentUpon>201701121416535_SuperPowerValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161335590_SuperHeroImages.resx">
+      <DependentUpon>201701161335590_SuperHeroImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161348344_SuperHeroDescriptionValidation.resx">
+      <DependentUpon>201701161348344_SuperHeroDescriptionValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171352201_SuperPowerImages.resx">
+      <DependentUpon>201701171352201_SuperPowerImages.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
