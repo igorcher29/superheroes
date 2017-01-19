@@ -41,7 +41,7 @@
         </td>
 
         <td>
-            @Html.ActionLink(item.Name, "Index", "SuperPowers", new { superhero = item.Name }, null);
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
