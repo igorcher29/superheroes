@@ -124,7 +124,12 @@ namespace Domain.Concrete
             }
             
             return dbEntry;
-        }        
+        }
+
+        public IEnumerable<SuperHero> GetSuperHeroesForUser(string userId)
+        {
+            return context.SuperHeroes.Where(c => c.UserId == userId).OrderBy(c => c.Name).ToList();
+        }
 
         public DbSet<SuperHero> SuperHeroes
         {

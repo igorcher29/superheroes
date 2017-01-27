@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using Domain.Concrete;
 using Domain.Entities;
+using Microsoft.AspNet.Identity.Owin;
+using SuperHeroLibrary.Models;
+using Microsoft.AspNet.Identity;
 
 namespace SuperHeroLibrary.Controllers
 {
@@ -19,7 +22,17 @@ namespace SuperHeroLibrary.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(repository.SuperHeroes.OrderBy(c => c.Name).ToList());
+            string userId = "";// "5dfb3e83-5675-4f84-9c48-7499caae5510";
+
+            ApplicationUserManager userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = userManager.FindByEmail(User.Identity.Name);
+
+            if (user != null)
+            {
+                userId = user.Id;
+            }
+
+            return View(repository.GetSuperHeroesForUser(userId));
         }
 
         // GET: SuperHeroes/Details/5
