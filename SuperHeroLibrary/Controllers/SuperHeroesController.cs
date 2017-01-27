@@ -73,7 +73,7 @@ namespace SuperHeroLibrary.Controllers
                 //ctx.SuperHeroes.Add(superHero);
                 //ctx.SaveChanges();
 
-                repository.SaveSuperHero(superHero, image);
+                repository.SaveSuperHero(superHero, image, CurrentUserId());
                 
                 return RedirectToAction("Index");
             }
@@ -105,7 +105,7 @@ namespace SuperHeroLibrary.Controllers
         {
             if (ModelState.IsValid)
             {                
-                repository.SaveSuperHero(superHero, image);
+                repository.SaveSuperHero(superHero, image, CurrentUserId());
                 return RedirectToAction("Index");
             }
             return View(superHero);

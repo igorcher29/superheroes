@@ -70,7 +70,7 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
-        public void SaveSuperHero(SuperHero hero, HttpPostedFileBase uploadImage)
+        public void SaveSuperHero(SuperHero hero, HttpPostedFileBase uploadImage, string userId)
         {
             if (hero.Id == 0)
             {
@@ -80,6 +80,7 @@ namespace Domain.Concrete
                     hero.ImageData = new byte[uploadImage.ContentLength];
                     uploadImage.InputStream.Read(hero.ImageData, 0, uploadImage.ContentLength);
                 }
+                hero.UserId = userId;
                 context.SuperHeroes.Add(hero);
             }
             else
@@ -88,7 +89,8 @@ namespace Domain.Concrete
                 if (dbEntry != null)
                 {
                     dbEntry.Name = hero.Name;
-                    dbEntry.Description = hero.Description;                   
+                    dbEntry.Description = hero.Description;
+                    hero.UserId = userId;
 
                     if (uploadImage!=null)
                     {
