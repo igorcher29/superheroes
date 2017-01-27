@@ -60,7 +60,7 @@ namespace SuperHeroLibrary
             (
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "SuperHeroes", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

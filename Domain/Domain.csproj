@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201701171352201_SuperPowerImages.Designer.cs">
       <DependentUpon>201701171352201_SuperPowerImages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701271708493_UserIdMigration.cs" />
+    <Compile Include="Migrations\201701271708493_UserIdMigration.Designer.cs">
+      <DependentUpon>201701271708493_UserIdMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701171352201_SuperPowerImages.resx">
       <DependentUpon>201701171352201_SuperPowerImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701271708493_UserIdMigration.resx">
+      <DependentUpon>201701271708493_UserIdMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

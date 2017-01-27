@@ -21,7 +21,7 @@ namespace SuperHeroLibrary.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("name=SuperHeroesConnectionString", throwIfV1Schema: false)
         {
         }
 

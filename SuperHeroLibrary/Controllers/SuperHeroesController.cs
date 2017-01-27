@@ -16,6 +16,7 @@ namespace SuperHeroLibrary.Controllers
         private EFSuperHeroesRepository repository = new EFSuperHeroesRepository();
 
         // GET: SuperHeroes
+        [Authorize]
         public ActionResult Index()
         {
             return View(repository.SuperHeroes.OrderBy(c => c.Name).ToList());

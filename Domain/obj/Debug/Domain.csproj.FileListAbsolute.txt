@@ -17,3 +17,4 @@ C:\Users\igor-\documents\visual studio 2015\Projects\SuperHeroLibrary\Domain\obj
 C:\Users\igor-\Documents\Visual Studio 2015\Projects\SuperHeroLibrary\Domain\obj\Debug\Domain.Migrations.SuperHeroImages.resources
 C:\Users\igor-\Documents\Visual Studio 2015\Projects\SuperHeroLibrary\Domain\obj\Debug\Domain.Migrations.SuperHeroDescriptionValidation.resources
 C:\Users\igor-\Documents\Visual Studio 2015\Projects\SuperHeroLibrary\Domain\obj\Debug\Domain.Migrations.SuperPowerImages.resources
+C:\Users\igor-\documents\visual studio 2015\Projects\SuperHeroLibrary\Domain\obj\Debug\Domain.Migrations.UserIdMigration.resources
