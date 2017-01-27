@@ -18,11 +18,9 @@ namespace SuperHeroLibrary.Controllers
     {
         private EFSuperHeroesRepository repository = new EFSuperHeroesRepository();
 
-        // GET: SuperHeroes
-        [Authorize]
-        public ActionResult Index()
+        private string CurrentUserId()
         {
-            string userId = "";// "5dfb3e83-5675-4f84-9c48-7499caae5510";
+            string userId = String.Empty;
 
             ApplicationUserManager userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationUser user = userManager.FindByEmail(User.Identity.Name);
@@ -32,7 +30,14 @@ namespace SuperHeroLibrary.Controllers
                 userId = user.Id;
             }
 
-            return View(repository.GetSuperHeroesForUser(userId));
+            return userId;
+        }
+
+        // GET: SuperHeroes
+        [Authorize]
+        public ActionResult Index()
+        {   
+            return View(repository.GetSuperHeroesForUser(CurrentUserId()));
         }
 
         // GET: SuperHeroes/Details/5
