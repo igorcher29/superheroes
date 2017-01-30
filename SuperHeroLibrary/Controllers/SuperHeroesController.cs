@@ -41,6 +41,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperHeroes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -56,6 +57,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperHeroes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -64,6 +66,7 @@ namespace SuperHeroLibrary.Controllers
         // POST: SuperHeroes/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(SuperHero superHero, HttpPostedFileBase image = null)
@@ -82,6 +85,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperHeroes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,6 +103,7 @@ namespace SuperHeroLibrary.Controllers
         // POST: SuperHeroes/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(SuperHero superHero, HttpPostedFileBase image = null)
@@ -112,6 +117,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperHeroes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -127,6 +133,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // POST: SuperHeroes/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
