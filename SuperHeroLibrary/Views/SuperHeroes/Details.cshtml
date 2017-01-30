@@ -5,6 +5,7 @@
 }
 
 
+
 <h1>
     @Html.DisplayFor(model => model.Name)
 </h1>
@@ -23,13 +24,13 @@
     }
     else
     {
-        <img class="figure" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
+        <img src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" class="figure-float-left" />
     }
 </p>
 
 <p>@Html.DisplayFor(model=>model.Description)</p>
 
-
+<hr class="clear-layer" />
 
 <table>
     <tr>
