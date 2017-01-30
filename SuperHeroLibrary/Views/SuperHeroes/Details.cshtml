@@ -16,14 +16,18 @@
 
 <hr />
 
-@if (Model.ImageData == null)
-{
-    <img class="figure" width="320" height="320" src="~/Content/Images/default_superhero.jpg" />
-}
-else
-{
-    <img class="figure" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
-}
+<p>
+    @if (Model.ImageData == null)
+    {
+        <img class="figure" width="320" height="320" src="~/Content/Images/default_superhero.jpg" />
+    }
+    else
+    {
+        <img class="figure" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
+    }
+</p>
+
+
 
 <table>
     <tr>
