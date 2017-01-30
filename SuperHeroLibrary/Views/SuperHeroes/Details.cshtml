@@ -16,6 +16,15 @@
 
 <hr />
 
+@if (Model.ImageData == null)
+{
+    <img class="figure" width="320" height="320" src="~/Content/Images/default_superhero.jpg" />
+}
+else
+{
+    <img class="figure" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
+}
+
 <table>
     <tr>
         <th>
@@ -40,11 +49,11 @@
                 <div class="form-group">
                     @if (item.ImageData == null)
                 {
-                        <img class="img-thumbnail" width="96" height="96" src="~/Content/Images/default_superpower.png" />
+                        <img class="img-thumbnail" width="32" height="32" src="~/Content/Images/default_superpower.png" />
                     }
                     else
                     {
-                        <img class="img-thumbnail" width="96" height="96" src="@Url.Action("GetImage", "SuperPowers", new {superpowerId = item.Id })" />
+                        <img class="img-thumbnail" width="64" height="64" src="@Url.Action("GetImage", "SuperPowers", new {superpowerId = item.Id })" />
                     }
                 </div>
             </td>
