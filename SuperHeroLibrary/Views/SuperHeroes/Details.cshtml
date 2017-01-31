@@ -73,11 +73,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.RouteLink("Редактировать", new {controller="SuperPowers", action = "Edit", id = item.Id})|
-                @Html.RouteLink("Просмотр", new { controller = "SuperPowers", action = "Details", id = item.Id })|
-                @Html.RouteLink("Удалить", new { controller = "SuperPowers", action = "Delete", id = item.Id })
             </td>            
         </tr>
     }
