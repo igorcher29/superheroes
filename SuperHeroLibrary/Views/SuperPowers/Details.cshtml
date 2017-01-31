@@ -4,20 +4,12 @@
     ViewBag.Title = "Суперспособность";
 }
 
-<h2>Просмотр</h2>
+<h2>@Html.DisplayFor(model => model.SuperHero.Name)</h2>
 
 <div>
     <h4>Суперспособность:</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SuperHero.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SuperHero.Name)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
