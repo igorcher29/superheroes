@@ -41,11 +41,14 @@
         }
     </div>
 
+    <div>
+        @Html.RouteLink("Назад", new { controller = "SuperHeroes", action = "Edit", id = Model.SuperHeroId })
+    </div>
+
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            @Html.ActionLink("К списку супеспособностей", "Index") |
+        <div class="form-actions no-color">            
             <input type="submit" value="Удалить" class="btn btn-default" />            
         </div>
     }
