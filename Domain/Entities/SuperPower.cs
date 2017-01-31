@@ -18,7 +18,7 @@ namespace Domain.Entities
 
         [Required(ErrorMessage = "Название суперспособности обязательно должно быть указано")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "В названии суперспособности должно быть не менее 3 и не более 50 символов")]
-        [Display(Name = "Суперспособность")]
+        [Display(Name = "Название")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Описание суперспособности обязательно должно быть указано")]

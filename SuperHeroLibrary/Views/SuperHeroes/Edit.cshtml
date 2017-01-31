@@ -52,7 +52,11 @@
                 <img class="img-thumbnail" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
             }
         </div>
-
+        
+        <div>
+            @Html.RouteLink("Добавить суперспособность", new { controller = "SuperPowers", action = "Create" })
+        </div>
+        
         <table>
             <tr>
                 <th>

@@ -112,7 +112,17 @@ namespace SuperHeroLibrary.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveSuperPower(superPower, image);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction
+                    (
+                    "Edit",
+                    new
+                    {
+                        controller = "SuperHeroes",
+                        action = "Edit",
+                        id = superPower.SuperHeroId
+                    }
+                    );
             }
 
             ViewBag.SuperHeroId = new SelectList(repository.SuperHeroes, "Id", "Name", superPower.SuperHeroId);
