@@ -31,11 +31,11 @@
             <div class="form-group">
                 @if (item.ImageData == null)
                 {
-                    <img class="img-thumbnail" width="96" height="96" src="~/Content/Images/default_superhero.jpg" />
+                    <img class="img-thumbnail" src="~/Content/Images/default_superhero.jpg" />
                 }
                 else
                 {
-                    <img class="img-thumbnail" width="96" height="96" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = item.Id })" />
+                    <img class="img-thumbnail" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = item.Id })" />
                 }
             </div>
         </td>

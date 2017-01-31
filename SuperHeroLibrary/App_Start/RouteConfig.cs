@@ -15,6 +15,13 @@ namespace SuperHeroLibrary
 
             routes.MapRoute
             (
+                name: "SuperHeroEdit",
+                url: "SuperHeroes/Edit",
+                defaults: new { controller = "SuperHeroes", action = "Edit", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute
+            (
                 name: "SuperPowerGetImage",
                 url: "SuperPowers/Create{superpowerId}",
                 defaults: new { controller = "SuperPowers", action = "GetImage" }
