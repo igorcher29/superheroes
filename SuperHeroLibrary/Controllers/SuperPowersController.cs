@@ -145,8 +145,7 @@ namespace SuperHeroLibrary.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveSuperPower(superPower, image);
-
-                //return RedirectToAction("Index");
+                
                 return RedirectToAction
                     (
                     "Edit",
