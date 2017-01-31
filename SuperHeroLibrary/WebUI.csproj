@@ -215,6 +215,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\default_superhero.jpg" />
+    <Content Include="Content\Images\default_superhero2.png" />
+    <Content Include="Content\Images\default_superhero3.png" />
     <Content Include="Content\Images\default_superpower.png" />
     <Content Include="Content\Images\default_superpower2.png" />
     <Content Include="Content\Images\startscreen01.png" />

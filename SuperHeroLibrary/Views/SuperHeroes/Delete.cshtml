@@ -4,21 +4,11 @@
     ViewBag.Title = "Удаление";
 }
 
-<h2>Удалить супергероя</h2>
-
 <h3>Вы уверены, что хотите удалить этого супергероя?</h3>
 <div>
-    <h4>Супергерой:</h4>
+    <h1>@Html.DisplayFor(model => model.Name)</h1>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
@@ -31,7 +21,7 @@
     <div class="form-group">
         @if (Model.ImageData == null)
             {
-            <img class="img-thumbnail" width="240" height="240" src="~/Content/Images/default_superhero.jpg" />
+            <img class="img-thumbnail" width="240" height="240" src="~/Content/Images/default_superhero3.png" />
         }
         else
         {

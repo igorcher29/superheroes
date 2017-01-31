@@ -4,22 +4,22 @@
     ViewBag.Title = "Супергерой";
 }
 
-
-
 <h1>
     @Html.DisplayFor(model => model.Name)
 </h1>
 
 <p>
-    @Html.ActionLink("К списку супергероев", "Index")
+    @Html.ActionLink("К списку супергероев", "Index")    
 </p>
+
+<p>@Html.RouteLink("Редактировать", new { controller = "SuperHeroes", action = "Edit", id = Model.Id })</p>
 
 <hr />
 
 <p>
     @if (Model.ImageData == null)
     {
-        <img class="figure" width="320" height="320" src="~/Content/Images/default_superhero.jpg" />
+        <img class="figure" width="320" height="320" src="~/Content/Images/default_superhero3.png" />
     }
     else
     {
@@ -29,9 +29,11 @@
 
 <p>@Html.DisplayFor(model=>model.Description)</p>
 
-<hr class="clear-layer" />
+<hr class="clear-layer"/>
+<br />
+<h2>Список суперспособностей:</h2>
 
-<table>
+<table class="table">
     <tr>
         <th>
             <p></p>

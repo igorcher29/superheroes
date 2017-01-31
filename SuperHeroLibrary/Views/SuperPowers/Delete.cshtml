@@ -4,22 +4,12 @@
     ViewBag.Title = "Удаление суперспособности";
 }
 
-<h2>Удаление суперспособности</h2>
-
 <h3>Вы уверены, что хотите удалить эту суперспособность?</h3>
 <div>
-    <h4>Суперспособность:</h4>
+    <h1>@Html.DisplayFor(model => model.Name)</h1>
     <hr />
     <dl class="dl-horizontal">        
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
+        
         <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
@@ -32,8 +22,8 @@
 
     <div class="form-group">
         @if (Model.ImageData == null)
-            {
-            <img class="img-thumbnail" width="320" height="320" src="~/Content/Images/default_superpower.png" />
+        {
+            <img class="img-thumbnail" width="128" height="128" src="~/Content/Images/default_superpower2.png" />
         }
         else
         {
