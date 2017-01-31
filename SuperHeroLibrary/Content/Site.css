@@ -54,3 +54,11 @@ textarea {
 .clear-layer {
     clear: both;
 }
+
+a.button-edit{
+    background: url(Images/button-edit.png) no-repeat top left;
+    display:block;
+    width:64px;
+    height:64px;
+    text-indent:-9999px;
+}
