@@ -96,10 +96,16 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperPowers/Create
-        public ActionResult Create()
+        public ActionResult Create(int? superHeroId)
         {
-            ViewBag.SuperHeroId = new SelectList(repository.SuperHeroes, "Id", "Name");
-            return View();
+            int r = 0;
+            if (superHeroId != null)
+            {
+                //ViewBag.SuperHeroId = new SelectList(repository.SuperHeroes, "Id", "Name");
+                ViewBag.SuperHeroId = superHeroId;
+                return View();
+            }
+            return HttpNotFound();
         }
 
         // POST: SuperPowers/Create
