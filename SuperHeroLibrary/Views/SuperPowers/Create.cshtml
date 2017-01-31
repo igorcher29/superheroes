@@ -53,7 +53,7 @@
 }
 
 <div>
-    @Html.ActionLink("К списку суперспособностей", "Index")
+    @Html.RouteLink("Назад", new { controller = "SuperHeroes", action = "Edit", id = ViewBag.SuperHeroId })
 </div>
 
 @section Scripts {

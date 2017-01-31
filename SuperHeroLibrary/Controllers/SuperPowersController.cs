@@ -98,7 +98,6 @@ namespace SuperHeroLibrary.Controllers
         // GET: SuperPowers/Create
         public ActionResult Create(int? superHeroId)
         {
-            int r = 0;
             if (superHeroId != null)
             {
                 //ViewBag.SuperHeroId = new SelectList(repository.SuperHeroes, "Id", "Name");
