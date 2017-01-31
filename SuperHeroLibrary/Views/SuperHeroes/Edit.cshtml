@@ -4,7 +4,7 @@
     ViewBag.Title = "Редактирование супергероя";
 }
 
-<h2>Редактирование</h2>
+<h2>Редактирование супергероя:</h2>
 
 
 @using (Html.BeginForm("Edit", "SuperHeroes", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Супергерой:</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -50,9 +49,60 @@
             }
             else
             {
-                <img class="img-thumbnail" width="240" height="240" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
+                <img class="img-thumbnail" src="@Url.Action("GetImage", "SuperHeroes", new {superheroId = Model.Id })" />
             }
         </div>
+
+        <table>
+            <tr>
+                <th>
+                    <p></p>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SuperPowers.First().Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SuperPowers.First().Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SuperPowers.First().Rating)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.SuperPowers)
+            {
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            @if (item.ImageData == null)
+                            {
+                                <img class="img-thumbnail" width="32" height="32" src="~/Content/Images/default_superpower.png" />
+                            }
+                            else
+                            {
+                                <img class="img-thumbnail" width="64" height="64" src="@Url.Action("GetImage", "SuperPowers", new {superpowerId = item.Id })" />
+                            }
+                        </div>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.RouteLink("Редактировать", new { controller = "SuperPowers", action = "Edit", id = item.Id })|
+                        @Html.RouteLink("Просмотр", new { controller = "SuperPowers", action = "Details", id = item.Id })|
+                        @Html.RouteLink("Удалить", new { controller = "SuperPowers", action = "Delete", id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
