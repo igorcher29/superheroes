@@ -197,12 +197,23 @@ namespace SuperHeroLibrary.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            //SuperPower superPower = repository.GetSuperPower(id);
+            SuperPower superPower = repository.GetSuperPower(id);
+            int? superheroId = superPower.SuperHeroId;
+            superPower = null;
 
             //ctx.SuperPowers.Remove(superPower);
             //ctx.SaveChanges();
             repository.DeleteSuperPower(id);
-            return RedirectToAction("Index");
+            return RedirectToAction
+                    (
+                    "Edit",
+                    new
+                    {
+                        controller = "SuperHeroes",
+                        action = "Edit",
+                        id = superheroId
+                    }
+                    );
         }
 
         public FileContentResult GetImage(int superpowerId)
