@@ -1,0 +1,64 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.figure-float-left {
+    float: left;
+    padding: 4px; /* Поля вокруг картинки */
+    margin: 0 6px 4px 0; /* Отступы */
+}
+			
+.left-block-1{
+    float: left; /* Обтекание по правому краю */
+    border: solid 1px black; /* Параметры рамки  */
+    padding: 10px; /* Поля вокруг текста */
+    margin-right: 20px; /* Отступ справа */
+    width: 600px; /* Ширина блока */
+}
+			
+.right-block-1 {
+    border: solid 1px black; /* Параметры рамки  */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px;
+    margin-left: 630px; /* Отступ справа */
+}
+			
+.common-block-1 {
+    border: solid 1px black; /* Параметры рамки  */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px;
+    margin-left: 20px; /* Отступ справа */
+}
+			
+.clear-layer {
+    clear: both;
+}
+
+a.button-edit{
+    background: url(Images/button-edit.png) no-repeat top left;
+    display:block;
+    width:64px;
+    height:64px;
+    text-indent:-9999px;
+}
