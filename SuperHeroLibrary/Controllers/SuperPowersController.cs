@@ -19,6 +19,7 @@ namespace SuperHeroLibrary.Controllers
         private EFSuperHeroesRepository repository = new EFSuperHeroesRepository();
 
         // GET: SuperPowers
+        [Authorize]
         public ActionResult Index(string superhero, string search, string sortBy, int? page)
         {
             var viewModel = new SuperPowerIndexViewModel();
@@ -79,6 +80,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperPowers/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -96,6 +98,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperPowers/Create
+        [Authorize]
         public ActionResult Create(int? superHeroId)
         {
             if (superHeroId != null)
@@ -110,6 +113,7 @@ namespace SuperHeroLibrary.Controllers
         // POST: SuperPowers/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(SuperPower superPower, HttpPostedFileBase image = null)
@@ -135,6 +139,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperPowers/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -155,6 +160,7 @@ namespace SuperHeroLibrary.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(SuperPower superPower, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
@@ -177,6 +183,7 @@ namespace SuperHeroLibrary.Controllers
         }
 
         // GET: SuperPowers/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -194,6 +201,7 @@ namespace SuperHeroLibrary.Controllers
         // POST: SuperPowers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             SuperPower superPower = repository.GetSuperPower(id);
